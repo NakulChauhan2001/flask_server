@@ -30,6 +30,15 @@ def consume_otp(queue_name, otp_queue):
     print(f' [*] Waiting for OTP messages from {queue_name}. To exit press CTRL+C')
     channel.start_consuming()
 
+
+#home
+@app.route('/', methods=['GET'])
+def hello():
+    return jsonify("hello world")
+
+
+
+
 # Flask route to publish platform OTP
 @app.route('/send-otp', methods=['POST'])
 def send_otp():
